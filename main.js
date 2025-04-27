@@ -18,7 +18,7 @@ for (let x = 0; x < width; x++) {
 }
 
 let version = '1.1.2'
-let subversion = '1.1.2.5'
+let subversion = '1.1.2.6'
 
 let brushSize = 1
 
@@ -585,8 +585,15 @@ canv.addEventListener('mousemove', (event) => {
         document.getElementById('power').textContent = `Power: ${Empty(gameX, gameY) ? 0 : game[gameX][gameY].power}`
         if (!Empty(gameX, gameY)) {
             document.getElementById('elem').textContent = `Elem: ${game[gameX][gameY].type}`
+            if (game[gameX][gameY].type == "reciever" || game[gameX][gameY].type == "sender" || game[gameX][gameY].type == "radio_lamp") {
+            document.getElementById('channel').style.display = "block"
+                document.getElementById('channel').textContent = `Channel: ${game[gameX][gameY].channel}`
+            } else {
+            document.getElementById('channel').style.display = "none"
+            }
         } else {
             document.getElementById('elem').textContent = "Elem: none"
+            document.getElementById('channel').style.display = "none"
         }
     }
 
