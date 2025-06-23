@@ -20,6 +20,17 @@ input {
     text-align: center;
 }
 
+select {
+    font-family: ps2p;
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid white;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+}
+
 #installer {
     text-align: center;
 }

@@ -1,0 +1,37 @@
+{
+    "Version": "1.0.0",
+    "Elements": {
+        "dust": { "name": "prach", "description": "Jako váš každodenní drát." },
+        "green_dust": { "name": "zelený prach", "description": "Jako váš každodenní drát, ale zelenný." },
+        "generator": { "name": "generátor", "description": "Generuje energii z molekul." },
+        "constant_generator": { "name": "konstantní generátor", "description": "Generuje určenou částku energie z molekul." },
+        "copper": { "name": "měď", "description": "Použit na manipulaci s baterkama, prodlužovačema, pochodněma a více." },
+        "concrete": { "name": "beton", "description": "Dělá nic pro svět, jako komunista." },
+        "torch": { "name": "pochodeň", "description": "Generátor který může být vypnut a zapnut s mědí." },
+        "reciever": { "name": "přijímač", "description": "Přijímá signál z odesílače." },
+        "sender": { "name": "odesílač", "description": "Odesilá energi přijímačům a rádiovým lampám." },
+        "lamp": { "name": "lampa", "description": "Rozsvítí se když má energii." },
+        "radio_lamp": { "name": "rádiová lampa", "description": "Rozsvítí se když příjme signál." },
+        "tunnel": { "name": "tunel", "description": "Přesměřuje energii na určenou cestu." },
+        "pass": { "name": "přechod", "description": "Povolí energii projít když je větší nebo se rovná určené částce." },
+        "rev_pass": { "name": "obrácený přechod", "description": "Povolí energii projít když je menší nebo se rovná určené částce." },
+        "extender": { "name": "prodlužovač", "description": "Prodlouží energii s energizovanou mědí." },
+        "battery": { "name": "baterie", "description": "Uloží nebo vypustí energii když reaktuje s energizovanou mědí." },
+        "clock": { "name": "hodiny", "description": "Vyšle signál dokola." },
+        "switch": { "name": "přepínač", "description": "Vypne se nebo se zapne když reaktuje s energizovanou mědí." },
+        "button": { "name": "tlačítko", "description": "Vypustí krátký signál když reaktuje s uživatelem." },
+        "lever": { "name": "páka", "description": "Vypne se nebo se zapne když reaktuje s uživatelem." },
+        "bridge": { "name": "most", "description": "Povolí energii jenom jít rovně." },
+        "multi_bridge": { "name": "více-stranný most", "description": "Přesměruje energii na stejný typ prachu." },
+        "toggle": { "name": "přepnout", "description": "Vypne/Zapne tlačítka a páky." }
+    },
+    "Ids": {
+        "RESET": "Resetovat",
+        "SAVE": "Uložit do souboru",
+        "LOAD": "Načíst z souboru",
+        "XWIDTH": "Extra šířka",
+        "NEEDHELP": "Potřebujete pomoc? Připojte se na náš discord servr nebo pošlete email na support@dkopal.xyz",
+        "CHANGELOG": "Změny",
+        "ADDONS": "Doplňky"
+    }
+}

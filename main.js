@@ -17,8 +17,58 @@ for (let x = 0; x < width; x++) {
     }
 }
 
-let version = '1.1.2'
-let subversion = '1.1.2.5'
+let version = '1.1.3'
+let subversion = '1.1.3.0'
+
+let translationLoaded = false
+let translationElements = null
+
+function saveSettings() {
+    const Settings = {
+        Translation: document.getElementById("TRANSLATION").value
+    }
+    localStorage.setItem("Settings", JSON.stringify(Settings))
+}
+
+function loadTranslation(translation) {
+    if (translation != "en") {
+        fetch("translations/" + translation + ".json")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(parsed => {
+                translationElements = parsed.Elements
+
+                const idTable = Object.keys(parsed.Ids)
+                idTable.forEach(id => {
+                    if (document.getElementById(id)) {
+                        document.getElementById(id).textContent = parsed.Ids[id]
+                    }
+                })
+
+                translationLoaded = true
+            })
+            .catch(error => {
+                console.error('err while loading translation', translation, error);
+            })
+    } else {
+        translationLoaded = true
+    }
+}
+
+let Settings = {}
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("Settings")) {
+        const SData = JSON.parse(localStorage.getItem("Settings"))
+        loadTranslation(SData.Translation)
+        document.getElementById("TRANSLATION").value = SData.Translation
+    } else {
+        loadTranslation("en")
+    }
+})
 
 let brushSize = 1
 
@@ -837,7 +887,9 @@ let allIgnore = ["tunnel", "battery", "bridge", "multi_bridge"]
 function addonButton(stone) {
     if (document.getElementById('elem-' + stone)) return;
     let button = document.createElement('button')
-    button.textContent = stone.replaceAll('_', ' ')
+    if (translationElements) {
+        if (translationElements[stone]) { button.textContent = translationElements[stone] }
+    } else { button.textContent = stone.replaceAll('_', ' ') }
     button.id = 'elem-' + stone
     button.onclick = () => {
         document.getElementById("description").textContent = bluestones[stone].description
@@ -870,7 +922,14 @@ function addonButton(stone) {
     }
 }
 
-function setup() {
+async function waitUntil(val, result) {
+    while (val() != result) {
+        await new Promise(resolve => setTimeout(resolve, 100))
+    }
+}
+
+async function setup() {
+    await waitUntil(() => translationLoaded, true)
     let bluestoneArray = Object.keys(bluestones)
     bluestoneArray.forEach(stone => {
         allIgnore.forEach(ignored => {
@@ -884,10 +943,14 @@ function setup() {
         })
         if (document.getElementById('elem-' + stone)) return;
         let button = document.createElement('button')
-        button.textContent = stone.replaceAll('_', ' ')
+        if (translationElements) {
+            if (translationElements[stone]) { button.textContent = translationElements[stone].name }
+        } else { button.textContent = stone.replaceAll('_', ' ') }
         button.id = 'elem-' + stone
         button.onclick = () => {
-            document.getElementById("description").textContent = bluestones[stone].description
+            if (translationElements) {
+                if (translationElements[stone]) { document.getElementById("description").textContent = translationElements[stone].description }
+            } else { document.getElementById("description").textContent = bluestones[stone].description }
             document.getElementById('elem-' + selected).classList.remove('stone-selected')
             document.getElementById('elem-' + selected).classList.add('stone-unselected')
 
