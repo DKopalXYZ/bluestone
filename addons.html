@@ -1,25 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <link rel="shortcut icon" href="image.ico" type="image/x-icon"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Addons</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" type="text/css" href="addons.css">
 </head>
 <body>
-    <p class="link" onclick="gotop('index.html')">Go back</p>
+    <p style="cursor: pointer; padding-left: 1%;" onclick="gotop('index.html')">Go back</p>
     <h1>Addons</h1>
-    <hr>
-    <p>Installed:</p>
-    <div id="installed"></div>
-    <hr>
-    <div id="installer">
-        <input id="install">
-        <button onclick="install()">+</button>
-    </div>
+    <div id="addons">Loading addons...</div>
+
+     <script src="koml.js"></script>
+     <script src="gotop.js"></script>
     <script src="addons.js"></script>
-    <script src="gotop.js"></script>
 </body>
 </html>

@@ -1,0 +1,97 @@
+Version: "1.0.0"
+{Elements}
+{Elements.dust}
+name: "prach"
+description: "Jako váš každodenní drát."
+{Elements.green_dust}
+name: "zelený prach"
+description: "Jako váš každodenní drát, ale zelenný."
+{Elements.generator}
+name: "generátor"
+description: "Generuje energii z molekul."
+{Elements.constant_generator}
+name: "konstantní generátor"
+description: "Generuje určenou částku energie z molekul."
+{Elements.copper}
+name: "měď"
+description: "Použit na manipulaci s baterkama, prodlužovačema, pochodněma a více."
+{Elements.concrete}
+name: "beton"
+description: "Dělá nic pro svět, jako komunista."
+{Elements.torch}
+name: "pochodeň"
+description: "Generátor který může být vypnut a zapnut s mědí."
+{Elements.receiver}
+name: "přijímač"
+description: "Přijímá signál z odesílače."
+{Elements.sender}
+name: "odesílač"
+description: "Odesilá energi přijímačům a rádiovým lampám."
+{Elements.lamp}
+name: "lampa"
+description: "Rozsvítí se když má energii."
+{Elements.radio_lamp}
+name: "rádiová lampa"
+description: "Rozsvítí se když příjme signál."
+{Elements.tunnel}
+name: "tunel"
+description: "Přesměřuje energii na určenou cestu."
+{Elements.pass}
+name: "přechod"
+description: "Povolí energii projít když je větší nebo se rovná určené částce."
+{Elements.rev_pass}
+name: "obrácený přechod"
+description: "Povolí energii projít když je menší nebo se rovná určené částce."
+{Elements.extender}
+name: "prodlužovač"
+description: "Prodlouží energii s energizovanou mědí."
+{Elements.battery}
+name: "baterie"
+description: "Uloží nebo vypustí energii když reaktuje s energizovanou mědí."
+{Elements.clock}
+name: "hodiny"
+description: "Vyšle signál dokola."
+{Elements.switch}
+name: "přepínač"
+description: "Vypne se nebo se zapne když reaktuje s energizovanou mědí."
+{Elements.button}
+name: "tlačítko"
+description: "Vypustí krátký signál když reaktuje s uživatelem."
+{Elements.lever}
+name: "páka"
+description: "Vypne se nebo se zapne když reaktuje s uživatelem."
+{Elements.bridge}
+name: "most"
+description: "Povolí energii jenom jít rovně."
+{Elements.multi_bridge}
+name: "více-stranný most"
+description: "Přesměruje energii na stejný typ prachu."
+{Elements.toggle}
+name: "přepnout"
+description: "Vypne/Zapne tlačítka a páky."
+{Elements.laser}
+name: "ukazovatélko"
+description: "Vytvoří laser"
+{Elements.laser_beam}
+name: "laser beam"
+description: "Just a laser beam"
+{Elements.laser_sensor}
+name: "laserový senzor"
+description: "Zapne se když je střelen laserem."
+{Elements.r_led}
+name: "červené LED"
+description: "LED žárovka ale červená."
+{Elements.b_led}
+name: "modré LED"
+description: "LED žárovka ale modrý."
+{Elements.g_led}
+name: "zelené LED"
+description: "LED žárovka ale zelená."
+{Ids}
+RESET: "Resetovat"
+SAVE: "Uložit do souboru"
+LOAD: "Načíst z souboru"
+XWIDTH: "Extra šířka"
+NEEDHELP: "Potřebujete pomoc? Připojte se na náš discord servr nebo pošlete email na support@dkopal.xyz"
+CHANGELOG: "Změny"
+ADDONS: "Doplňky"

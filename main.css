@@ -47,7 +47,7 @@ select {
     text-align: center;
 }
 
-.stone {
+.component {
     display: inline-block;
     padding: 12px 24px;
     margin: 10px;
@@ -59,11 +59,11 @@ select {
     border: 2px solid #000;
 }
 
-.stone-selected {
+.component-selected {
     border: 2px solid greenyellow;
 }
 
-.stone-unselected {
+.component-unselected {
     border: 2px solid #000;
 }
 

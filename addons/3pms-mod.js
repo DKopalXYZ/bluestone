@@ -171,11 +171,3 @@ bluestones.xor_gate = {
     },
     ignorePoweredProperty: true
 };
-
-// addon buttons
-
-addonButton("xor_gate")
-addonButton("and_gate")
-addonButton("or_gate")
-addonButton("not_gate")
-addonButton("red_dust")

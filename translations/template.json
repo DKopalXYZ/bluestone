@@ -1,0 +1,43 @@
+{
+    "Version": "1.0.0",
+    "Elements": {
+        "dust": { "name": "dust", "description": "Like your everyday's wire." },
+        "green_dust": { "name": "green dust", "description": "Like your everyday's wire but green." },
+        "generator": { "name": "generator", "description": "Generates power out of air molecules." },
+        "constant_generator": { "name": "constant generator", "description": "Generates a set power amount out of air molecules." },
+        "copper": { "name": "copper", "description": "Used for manipulation with batteries, extenders, torches and more." },
+        "concrete": { "name": "concrete", "description": "Does nothing for the world, like a communist." },
+        "torch": { "name": "torch", "description": "Generator which can be turned on/off with powered copper." },
+        "receiver": { "name": "receiver", "description": "Recieves power from senders." },
+        "sender": { "name": "sender", "description": "Sends power to receivers and radio lamps." },
+        "lamp": { "name": "lamp", "description": "Lights up when powered." },
+        "radio_lamp": { "name": "radio lamp", "description": "Lights up when recieving a signal." },
+        "tunnel": { "name": "tunnel", "description": "Redirects signals to go a specific way." },
+        "pass": { "name": "pass", "description": "Allows power to go through when it's equal to or higher than a set value." },
+        "rev_pass": { "name": "reverse pass", "description": "Allows power to go through when it's equal to or lower than a set value." },
+        "extender": { "name": "extender", "description": "Extends signal with powered copper." },
+        "battery": { "name": "battery", "description": "Stores and releases energy when reacting with powered copper." },
+        "clock": { "name": "clock", "description": "Sends out a signal repeatedly." },
+        "switch": { "name": "switch", "description": "Toggles on/off when a powered copper block is next to it." },
+        "button": { "name": "button", "description": "Sents out a short signal when toggled." },
+        "lever": { "name": "lever", "description": "Turns on/off when toggled.." },
+        "bridge": { "name": "bridge", "description": "Allows signals to go straight through each other." },
+        "multi_bridge": { "name": "multi bridge", "description": "Allows signals to go straight through each other." },
+        "toggle": { "name": "toggle", "description": "Toggles buttons and levers." },
+        "laser": { "name": "laser", "description": "Shoots out a laser beam." },
+        "laser_beam": { "name": "laser beam", "description": "Just a laser beam" },
+        "laser_sensor": { "name": "laser sensor", "description": "Powers up when hit with a laser beam." },
+        "r_led": { "name": "red LED", "description": "LED lightbulb but red." },
+        "b_led": { "name": "blue LED", "description": "LED lightbulb but blue." },
+        "g_led": { "name": "green LED", "description": "LED lightbulb but green." }
+    },
+    "Ids": {
+        "RESET": "Reset",
+        "SAVE": "Save as File",
+        "LOAD": "Load a File",
+        "XWIDTH": "Extra width",
+        "NEEDHELP": "Need help? Join our discord or email us at support@dkopal.xyz",
+        "CHANGELOG": "Changelog",
+        "ADDONS": "Addons"
+    }
+}
