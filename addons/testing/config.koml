@@ -1,0 +1,4 @@
+{config}
+addon: "testing addon lol"
+author: "david"
+version: "1.0.0"
