@@ -1,5 +1,3 @@
-const { createContext } = require("react");
-
 class CAPI {
     randint(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -63,7 +61,7 @@ class CAPI {
     }
 
     drawPixel(x,y,color) {
-        if (!isEmpty(x,y)) {
+        if (!Empty(x,y)) {
             const old = ctx.fillStyle
             ctx.fillStyle = color
             ctx.fillRect(x*10,y*10,10,10)
@@ -72,7 +70,7 @@ class CAPI {
     }
 
     drawText(text,x,y,color,fontsize) {
-        if (!isEmpty(x,y)) {
+        if (!Empty(x,y)) {
             ctx.font = `${fontsize}px ps2p`
             const old = ctx.fillStyle
             ctx.fillStyle = color

@@ -1,4 +1,5 @@
 let textToShow = ""
+let fontSize = 0
 
 runOnLoad(() => {
     const Capy = new CAPI()
@@ -8,12 +9,16 @@ runOnLoad(() => {
         description: "Useful for documenting stuff.",
         selected: () => {
             textToShow = prompt("What should the comment say?")
+            fontSize = Number(prompt("Size of font?"))
         },
         placed: (pixel) => {
             pixel.text = textToShow
+            pixel.size = fontSize
         },
         behavior: (pixel) => {
-            Capy.drawText(pixel.text,pixel.x,pixel.y,"#fff",24)
+            Capy.drawText(pixel.text,pixel.x,pixel.y,"#fff",fontSize)
         }
     }
+
+    componentSetup("comment")
 })

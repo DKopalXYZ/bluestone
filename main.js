@@ -43,6 +43,34 @@ let ticks = 0;
 let translationLoaded = false;
 let translationElements = null;
 
+async function waitUntil(val, result) {
+    while (val() != result) {
+        await new Promise(resolve => setTimeout(resolve, 100))
+    }
+}
+
+let gameLoaded = false
+
+async function waitUntilMATLoaded(func) { // Yields until mods and translations are loaded
+    while (!gameLoaded) {
+        await new Promise(resolve => setTimeout(resolve, 100))
+    }
+    func()
+}
+
+const runOnLoadedFuncs = []
+function runOnLoad(func) {
+    runOnLoadedFuncs.push(func)
+}
+const runBeforeUpdateFuncs = []
+function runBeforeUpdate(func) {
+    runBeforeUpdateFuncs.push(func)
+}
+const runAfterUpdateFuncs = []
+function runAfterUpdate(func) {
+    runAfterUpdateFuncs.push(func)
+}
+
 let addonsLoaded = 0
 let addonsToLoad = 0
 
@@ -897,7 +925,13 @@ function extraWidth() {
     resetGame()
 }
 
-function update() {
+async function update() {
+    let loadedBU = 0
+    runBeforeUpdateFuncs.forEach(func => {
+        func()
+        loadedBU++
+    })
+    await waitUntil(() => loadedBU == runBeforeUpdateFuncs.length,true)
     ticks++
     ctx.clearRect(0, 0, canv.width, canv.height);
 
@@ -974,6 +1008,13 @@ function update() {
 
     ctx.strokeStyle = '#ffffff';
     ctx.strokeRect(Math.floor(mX / 10 - hBrush) * 10, Math.floor(mY / 10 - hBrush) * 10, size, size);
+
+    let loadedAU = 0
+    runAfterUpdateFuncs.forEach(func => {
+        func()
+        loadedAU++
+    })
+    await waitUntil(() => loadedAU == runAfterUpdateFuncs.length,true)
 
     requestAnimationFrame(update);
 }
@@ -1163,21 +1204,6 @@ function componentSetup(component) {
     }
 }
 
-async function waitUntil(val, result) {
-    while (val() != result) {
-        await new Promise(resolve => setTimeout(resolve, 100))
-    }
-}
-
-let gameLoaded = false
-
-async function waitUntilLoaded(func) {
-    while (!gameLoaded) {
-        await new Promise(resolve => setTimeout(resolve, 100))
-    }
-    func()
-}
-
 async function setup() {
     console.time("gameload")
     console.time("modsload")
@@ -1202,6 +1228,13 @@ async function setup() {
         if (document.getElementById('elem-' + component)) return;
         if (!bluestones[component].hidden) componentSetup(component);
     })
+
+    let loadedFuncs = 0
+    runOnLoadedFuncs.forEach(func => {
+        func()
+        loadedFuncs++
+    })
+    await waitUntil(() => loadedFuncs == runOnLoadedFuncs.length,true)
 
     update()
 }

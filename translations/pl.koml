@@ -1,0 +1,97 @@
+Version: "1.0.0"
+{Elements}
+{Elements.dust}
+name: "pył"
+description: "Zwykły kabel."
+{Elements.green_dust}
+name: "zielony pył"
+description: "Zwykły kabel ale zielony."
+{Elements.generator}
+name: "generator"
+description: "Tworzy prąd z powietrza."
+{Elements.constant_generator}
+name: "ciągły generator"
+description: "Tworzy ustaloną ilość prądu z powietrza."
+{Elements.copper}
+name: "miedź"
+description: "Użyta do manipulowania pochodni, przepuszczaczy, wydłużaczy, itd."
+{Elements.concrete}
+name: "beton"
+description: "Nie robi nic dla świata, tak jak komunista."
+{Elements.torch}
+name: "pochodnia"
+description: "Generator który może być włączony/wyłączony przez napędzoną miedź"
+{Elements.receiver}
+name: "adresat"
+description: "Otrzymuje prąd od nadawców"
+{Elements.sender}
+name: "nadawca"
+description: "Wysyła prąd do adresatów i Eżarówek"
+{Elements.lamp}
+name: "żarówka"
+description: "Świeci kiedy jest napędzona."
+{Elements.radio_lamp}
+name: "Eżarówka"
+description: "Świeci kiedy otrzymuje sygnał."
+{Elements.tunnel}
+name: "tunel"
+description: "Przekierowuje sygnały w danym kierunku."
+{Elements.pass}
+name: "przepuszczacz"
+description: "Przepuszcza prąd gdy siła jest większa lub równa do danej liczby."
+{Elements.rev_pass}
+name: "odwrotny przepuszczacz"
+description: "Przepuszcza prąd gdy siła jest mniejsza lub równa do danej liczby."
+{Elements.extender}
+name: "wydłużacz"
+description: "Wydłuża sygnał używając napędzonej miedzi."
+{Elements.battery}
+name: "bateria"
+description: "Przechowuje prąd i wypuszcza go kiedy reaguje z napędzoną miedzią."
+{Elements.clock}
+name: "stoper"
+description: "Wielokrotnie wysyła sygnał."
+{Elements.switch}
+name: "detektor"
+description: "Włącza/wyłącza się kiedy napędzona miedź jest obok niego."
+{Elements.button}
+name: "przycisk"
+description: "Wysyła krótki sygnał kiedy zostaje włączony."
+{Elements.lever}
+name: "dźwignia"
+description: "Włącza/wyłącza się po przełączeniu."
+{Elements.bridge}
+name: "most"
+description: "Pozwala na przepuszczenie sygnałów przez inne sygnały."
+{Elements.multi_bridge}
+name: "multi most"
+description: "Pozwala na przepuszczenie sygnałów przez inne sygnały."
+{Elements.toggle}
+name: "przełącznik"
+description: "Włącza/wyłącza przyciski i dzwignie."
+{Elements.laser}
+name: "laser"
+description: "Wystrzela promień laserowy."
+{Elements.laser_beam}
+name: "promień lasera"
+description: "Po prostu promień laserowy."
+{Elements.laser_sensor}
+name: "sensor laserowy"
+description: "Włacza się kiedy zostaje uderzony przez promień laserowy"
+{Elements.r_led}
+name: "czerwony LED"
+description: "LED ale czerwony."
+{Elements.b_led}
+name: "niebieski LED"
+description: "LED ale niebieski."
+{Elements.g_led}
+name: "zielony LED"
+description: "LED ale zielony."
+{Ids}
+RESET: "Reset"
+SAVE: "Zapisz jako"
+LOAD: "Załaduj plik"
+XWIDTH: "Dodatkowa szerokość"
+NEEDHELP: "Potrzebujesz pomocy? Dołącz do discorda lub wyślij email na support@dkopal.xyz"
+CHANGELOG: "Dziennik zmian"
+ADDONS: "Dodatki"
