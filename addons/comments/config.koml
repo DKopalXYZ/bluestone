@@ -1,0 +1,7 @@
+{config}
+addon = "Comments"
+author = "DKopal"
+version = "1.0.0"
+
+[dependencies]
+capi
