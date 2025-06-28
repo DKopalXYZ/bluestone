@@ -16,7 +16,7 @@ runOnLoad(() => {
             pixel.size = fontSize
         },
         behavior: (pixel) => {
-            Capy.drawText(pixel.text,pixel.x,pixel.y,"#fff",fontSize)
+            Capy.drawText(pixel.text,pixel.x,pixel.y,"#fff",pixel.size)
         }
     }
 
