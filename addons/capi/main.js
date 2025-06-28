@@ -1,14 +1,14 @@
-class BSAPI {
+class CAPI {
     randint(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min)
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
     rand(min, max) {
-        return Math.random() * (max - min + 1) + min
+        return Math.random() * (max - min + 1) + min;
     }
 
     choice(array) {
-        return array[this.randint(0, array.length - 1)]
+        return array[this.randint(0, array.length - 1)];
     }
 
     shuffle(array) {
@@ -20,15 +20,15 @@ class BSAPI {
     }
 
     chance(chance) {
-        return Math.random() <= chance
+        return Math.random() <= chance;
     }
 
     pchance(chance) {
-        return (Math.random() * 100) <= chance
+        return (Math.random() * 100) <= chance;
     }
 
     randchance() {
-        return this.chance(Math.random())
+        return this.chance(Math.random());
     }
 
     randstr(length = 8, chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789") {
@@ -44,5 +44,19 @@ class BSAPI {
         return `#${hex()}${hex()}${hex()}`;
     }
 
+    async wait(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
+    repeat(times, func) {
+        for (let i = 0; i < times; i++) {
+            func(i)
+        }
+    }
+
+    distance(x1, y1, x2, y2) {
+        const dx = x2 - x1;
+        const dy = y2 - y1;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
 }
