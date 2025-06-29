@@ -1,9 +1,9 @@
 // mod by 3pm
 
 const threepmsmodversion = "0.0.3"
-const threepmsmodsubversion = "0.0.3"
-const threepmsmodversionname = "The logic update"
-const threepmsmodsubversionname = "The logic update"
+const threepmsmodsubversion = "0.0.3.1"
+const threepmsmodversionname = "The Logic Update"
+const threepmsmodsubversionname = "The Adaptation Update"
 
 console.log("3pms mod exists")
 console.log("v"+threepmsmodversion+": "+threepmsmodversionname)
