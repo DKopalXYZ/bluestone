@@ -1,8 +1,8 @@
 let textToShow = ""
 let fontSize = 0
 
-runOnLoad(() => {
-    const Capy = new CAPI()
+waitUntilMATLoaded().then(() => {
+    const capi = new CAPI()
 
     bluestones.comment = {
         color: "#222222",
@@ -16,7 +16,7 @@ runOnLoad(() => {
             pixel.size = fontSize
         },
         behavior: (pixel) => {
-            Capy.drawText(pixel.text,pixel.x,pixel.y,"#fff",pixel.size)
+            capi.drawText(pixel.text,pixel.x,pixel.y,"#fff",pixel.size)
         }
     }
 

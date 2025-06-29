@@ -36,7 +36,7 @@ for (let x = 0; x < width; x++) {
     }
 }
 
-let version = '1.1.3';
+let version = '1.2.1';
 
 let ticks = 0;
 
@@ -51,11 +51,10 @@ async function waitUntil(val, result) {
 
 let gameLoaded = false
 
-async function waitUntilMATLoaded(func) { // Yields until mods and translations are loaded
+async function waitUntilMATLoaded() { // Yields until mods and translations are loaded
     while (!gameLoaded) {
         await new Promise(resolve => setTimeout(resolve, 100))
     }
-    func()
 }
 
 const runOnLoadedFuncs = []
