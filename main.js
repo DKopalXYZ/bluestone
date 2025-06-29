@@ -36,7 +36,7 @@ for (let x = 0; x < width; x++) {
     }
 }
 
-let version = '1.2.1';
+const version = '1.2.1';
 
 let ticks = 0;
 

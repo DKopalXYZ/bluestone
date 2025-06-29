@@ -1,0 +1,97 @@
+Version: "1.0.0"
+{Elements}
+{Elements.dust}
+name: "poudre"
+description: "Comme les câbles de tous les jours."
+{Elements.green_dust}
+name: "poudre verte"
+description: "Comme les câbles de tous les jours mais vert."
+{Elements.generator}
+name: "générateur"
+description: "Génère du courant grâce au molécules d'air."
+{Elements.constant_generator}
+name: "générateur constant"
+description: "Génère une puissance de courant paramétré grâce au molécules d'air."
+{Elements.copper}
+name: "cuivre"
+description: "Utilisé pour la manipulation avec des batteries, étendeurs, torches et plus."
+{Elements.concrete}
+name: "béton"
+description: "Ne fait rien pour le monde, comme un communiste."
+{Elements.torch}
+name: "torche"
+description: "Générateur qui peut être allumé/éteint avec du cuivre alimenté."
+{Elements.receiver}
+name: "recepteur"
+description: "Recois du courant depuis les émétteurs."
+{Elements.sender}
+name: "émetteur"
+description: "Émet du courant au recepteurs et au lampes radio."
+{Elements.lamp}
+name: "lampe"
+description: "S'allume quand alimenté."
+{Elements.radio_lamp}
+name: "lampe radio"
+description: "S'allume quand un signal est recu."
+{Elements.tunnel}
+name: "tunnel"
+description: "Redirige les signaux pour aller dans un sens spécific."
+{Elements.pass}
+name: "pass"
+description: "Permet au courant de passer quand il est égal ou supérieur qu'une variable paramétrée."
+{Elements.rev_pass}
+name: "pass inversé"
+description: "Permet au courant de passer quand il est égal ou inférieur qu'une variable paramétrée."
+{Elements.extender}
+name: "étendeur"
+description: "Étends le signal avec du cuivre alimenté."
+{Elements.battery}
+name: "batterie"
+description: "Contient et relache de l'énergie quand il réagit avec du cuivre alimenté."
+{Elements.clock}
+name: "horloge"
+description: "Envoie un signal de façon répétée."
+{Elements.switch}
+name: "interrupteur"
+description: "Bascule entre allumé/éteint quand du cuivre allumé est à côté."
+{Elements.button}
+name: "bouton"
+description: "Envoie un signal court quand appuyé."
+{Elements.lever}
+name: "levier"
+description: "S'allume/éteint quand basculé.."
+{Elements.bridge}
+name: "pont"
+description: "Permet au signaux de passer entre eux."
+{Elements.multi_bridge}
+name: "multi pont"
+description: "Permet au signaux de passer entre eux."
+{Elements.toggle}
+name: "basculer"
+description: "Bascule les boutons et les leviers."
+{Elements.laser}
+name: "laser"
+description: "Tire un rayon laser."
+{Elements.laser_beam}
+name: "rayon laser"
+description: "Juste un rayon laser"
+{Elements.laser_sensor}
+name: "détécteur de laser"
+description: "S'allume quand un rayon laser est tiré dessus."
+{Elements.r_led}
+name: "DEL rouge"
+description: "Lampe DEL mais rouge."
+{Elements.b_led}
+name: "DEL bleu"
+description: "Lampe DEL mais bleu."
+{Elements.g_led}
+name: "DEL verte"
+description: "Lampe DEL mais vert."
+{Ids}
+RESET: "Réinitialiser"
+SAVE: "Sauvegarder en tant que fichier"
+LOAD: "Charger un fichier"
+XWIDTH: "Extra Largeur"
+NEEDHELP: "Besoin d'aide? Rejoignez notre discord ou envoyez nous un email vers support@dkopal.xyz"
+CHANGELOG: "Log de changement"
+ADDONS: "Extensions"

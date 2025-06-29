@@ -1,3 +1,5 @@
+const KOMLVersion = "1.0.1"
+
 function KOMLParse(str) {
     const data = {};
     const lines = str.trim().split("\n");
@@ -5,6 +7,7 @@ function KOMLParse(str) {
     let groupType = null;
 
     function parseValue(val) {
+        val = val.trim();
         if (val === "true") return true;
         if (val === "false") return false;
         if (!isNaN(val)) return Number(val);
@@ -14,12 +17,9 @@ function KOMLParse(str) {
         return val;
     }
 
-    function Group(group, isArray) {
-        if (!group) return;
-
-        const [name, val] = group;
-        if (!name) return;
-
+    function assignGroup() {
+        if (!cGroup) return;
+        const [name, val] = cGroup;
         const parts = name.split(".");
         let current = data;
         for (let i = 0; i < parts.length - 1; i++) {
@@ -30,47 +30,55 @@ function KOMLParse(str) {
             current = current[key];
         }
         current[parts[parts.length - 1]] = val;
+        cGroup = null;
+        groupType = null;
     }
 
+    for (let raw of lines) {
+        raw = raw.trim();
+        if (!raw || raw.startsWith("#")) continue;
 
-    for (let line of lines) {
-        line = line.trim();
-        if (!line) continue;
-        if (line == "" || line.startsWith("#")) continue;
+        const segments = raw.split(";").map(s => s.trim()).filter(Boolean);
+        for (let line of segments) {
+            if (!line || line.startsWith("#")) continue;
 
-        if (line.startsWith("{") && line.endsWith("}")) {
-            Group(cGroup, groupType === "array");
-            cGroup = [line.slice(1, -1), {}];
-            groupType = "object";
-        } else if (line.startsWith("[") && line.endsWith("]")) {
-            Group(cGroup, groupType === "array");
-            cGroup = [line.slice(1, -1), []];
-            groupType = "array";
-        } else {
+            if (line.startsWith("{") && line.endsWith("}")) {
+                assignGroup();
+                cGroup = [line.slice(1, -1), {}];
+                groupType = "object";
+                continue;
+            } else if (line.startsWith("[") && line.endsWith("]")) {
+                assignGroup();
+                cGroup = [line.slice(1, -1), []];
+                groupType = "array";
+                continue;
+            }
+
             if (!cGroup) {
-                if (line.includes(": ")) {
-                    const [key, val] = line.split(": ");
-                    data[key.trim()] = parseValue(val.trim());
-                } else {
-                    continue
+                const idx = line.indexOf(":");
+                if (idx !== -1) {
+                    const key = line.slice(0, idx).trim();
+                    const val = line.slice(idx + 1).trim();
+                    data[key] = parseValue(val);
                 }
-            };
-
-            if (groupType === "object") {
-                if (line.includes(": ")) {
-                    const [key, val] = line.split(": ");
-                    cGroup[1][key.trim()] = parseValue(val.trim());
+            } else {
+                if (groupType === "object") {
+                    const idx = line.indexOf(":");
+                    if (idx !== -1) {
+                        const key = line.slice(0, idx).trim();
+                        const val = line.slice(idx + 1).trim();
+                        cGroup[1][key] = parseValue(val);
+                    }
+                } else if (groupType === "array") {
+                    cGroup[1].push(parseValue(line));
                 }
-            } else if (groupType === "array") {
-                cGroup[1].push(parseValue(line));
             }
         }
     }
 
-    Group(cGroup, groupType === "array");
+    assignGroup();
     return data;
 }
-
 
 function KOMLStringify(data) {
     const result = [];
